@@ -6,7 +6,12 @@ header {
     align-items: center;
     background-color: white;
     opacity: 0.6;
+    padding : 2rem;
     svg {
-        font-size: 5rem;
+        font-size: 7rem;
+        margin:2rem;
+    }
+    h1 {
+        font-size: 6rem;
     }
 }

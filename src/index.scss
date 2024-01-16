@@ -26,16 +26,10 @@ code {
 .menu-cards {
   display: flex;
   justify-content: space-between;
-  .menu-tab {
-    flex-basis: 25%;
-    height: 40vh;
-    text-align: center;
-    .tab-header {
-      width: 100%;
-    }
-  }
+  padding:2rem;
+  margin:2rem;
 }
 
-.add-order {
-  @include m.menuTab(red)
+.menu-tab-add {
+  @include m.menuTab(rgb(78, 78, 212));
 }

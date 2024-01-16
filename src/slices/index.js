@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    orders : []
+    items : []
 }
 
 const dataSlice = createSlice({
@@ -9,9 +9,10 @@ const dataSlice = createSlice({
     initialState,
     reducers : {
         add : (state, { payload }) => {
-            state.orders.push({
-                id: Date.now(),
-                bill: payload,
+            state.items.push({
+                id: `CMD-${Date.now()}`,
+                products: [payload],
+                bill: 0,
                 paid: false
             })
         },

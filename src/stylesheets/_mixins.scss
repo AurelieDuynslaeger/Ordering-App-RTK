@@ -2,4 +2,16 @@
     color : white;
     background-color: $background;
     border: 0.5rem solid white;
+    text-align: center;
+    height:40vh;
+    padding: 1.5rem;
+    flex-basis:30%;
+    align-items: center;
+    svg {
+        font-size: 7rem;
+      }
+      h3 {
+        font-size: 4rem;
+        text-transform: uppercase;
+      }
 }

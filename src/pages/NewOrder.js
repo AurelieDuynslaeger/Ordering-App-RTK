@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import ShowItems from '../components/ShowItems';
+import Header from '../components/Header';
 
 const NewOrder = () => {
 
@@ -8,9 +9,12 @@ const NewOrder = () => {
 
   return (
     <div className="container">
-        <ShowItems/>
-        <div className="cart">
-            <h1>Commande n° : {id}</h1>
+        <Header/>
+        <div className="wrapper">
+            <ShowItems/>
+            <div className="cart">
+                <h1>Commande n° : {id}</h1>
+            </div>
         </div>
     </div>
   )

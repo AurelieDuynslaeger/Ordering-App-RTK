@@ -11,7 +11,8 @@ const ShowItems = () => {
                 <img src={item.cover} alt={item.name} />
             </div>
             <div className="product-detail">
-                {item.name} - {item.price} €
+                <p>{item.name}</p> 
+                <p>{item.price} €</p>
             </div>
         
         </div>  

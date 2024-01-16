@@ -33,3 +33,41 @@ code {
 .menu-tab-add {
   @include m.menuTab(rgb(78, 78, 212));
 }
+
+.wrapper {
+  display: flex;
+  padding:2rem;
+}
+
+.products-list {
+  width: 55vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-card {
+  flex-basis: 50%;
+  padding:2rem;
+  img {
+    width: 100%;
+    border-radius: 10rem 0;
+  }
+  
+}
+
+.product-detail {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: white;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 5rem 0;
+  margin:1rem;
+}
+
+.cart {
+  width: 35VW;
+  background-color: red;
+  padding: 2rem;
+}

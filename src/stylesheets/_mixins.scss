@@ -1,0 +1,5 @@
+@mixin menuTab ($background){
+    color : white;
+    background-color: $background;
+    border: 0.5rem solid white;
+}

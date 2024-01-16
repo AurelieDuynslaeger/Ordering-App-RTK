@@ -4,7 +4,6 @@ import Home from './pages/Home.js'
 
 const App = () => {
   return (
-    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <Home/>}/>
@@ -13,7 +12,7 @@ const App = () => {
           <Route path="/OrdersToPay" />
         </Routes>
       </BrowserRouter>
-    </div>
+
   )
 }
 

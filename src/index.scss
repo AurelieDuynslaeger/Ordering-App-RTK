@@ -1,5 +1,6 @@
 @use "./stylesheets/reset";
 @use "./stylesheets/variables" as v;
+@use "./stylesheets/mixins" as m;
 
 body {
   margin: 0;
@@ -8,10 +9,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./img/background-pizza.jpg");
   
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  max-width: 90vw;
+  margin: auto;
+}
+
+.menu-cards {
+  display: flex;
+  justify-content: space-between;
+  .menu-tab {
+    flex-basis: 25%;
+    height: 40vh;
+    text-align: center;
+    .tab-header {
+      width: 100%;
+    }
+  }
+}
+
+.add-order {
+  @include m.menuTab(red)
 }

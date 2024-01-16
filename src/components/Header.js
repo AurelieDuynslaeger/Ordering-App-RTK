@@ -1,5 +1,6 @@
 import React from 'react'
 import { ImTicket } from "react-icons/im";
+import "../stylesheets/Header.scss"
 
 const Header = () => {
   return (

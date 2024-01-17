@@ -1,29 +1,35 @@
 import React from 'react'
 import Header from '../components/Header';
 import DetailSelected from '../components/DetailSelected';
-import products from '../services/products';
 import Product from '../components/Product';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addProduct } from "../slices"
+import products from '../services/products';
+
 
 const NewOrder = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  
-  const items = products;
+
+  const orders = useSelector(state => state.data.items);
+  const currentOrder = orders.find(order => order.id === id);
+  const selectedProducts = currentOrder ? currentOrder.products : [];
+
 
   const addProductToCart = (product) => {
-    const orderId = id;
-    dispatch(addProduct({orderId, product}));
-    console.log(product)
-  }
+    // console.log("Adding product to cart:", product);
+    if (currentOrder) {
+      console.log("Current Order ID:", id);
+      dispatch(addProduct({ orderId: id, product }));
+    }
+  };
 
-  const listProducts = items.map(item => {
+  const listProducts = products.map(product => {
     return (
-    <Product key={item.id} name={item.name} price={item.price} cover={item.cover} action={()=> addProductToCart(item)}/>
-    //action à définir : push l'item dans le panier = push la pizza dans item.products pour le nouvel objet item du state inital 
-  )});
+      <Product key={product.id} name={product.name} price={product.price} cover={product.cover} action={() => addProductToCart(product)}/>
+    );
+  });
 
   
   return (
@@ -34,7 +40,7 @@ const NewOrder = () => {
             {listProducts}
           </div>
             <div className="order-detail">
-               <DetailSelected items={products} total={12}/>
+               <DetailSelected orderId={id} selectedProducts={selectedProducts}/>
             </div>
         </div>
     </div>

@@ -19,26 +19,22 @@ const dataSlice = createSlice({
     reducers : {
         add : (state, { payload }) => {
             state.items.push({
-                id: `CMD-${Date.now()}`,
-                products: [payload],
-                bill: 0,
-                paid: false
+                id: payload.id,
+                products: payload.products || [],
+                bill: payload.bill || 0,
+                paid: payload.paid || false,
             })
         },
-        addProduct : (state, { payload }) => {
+        addProduct: (state, { payload }) => {
             const { orderId, product } = payload;
-        
-            const foundOrder = state.items.find(order => {
-            console.log("IDs in state.items:", state.items.map(order => order.id));
-            return order.id === orderId;
-            });
-
-            console.log("Found order:", foundOrder);
-
-            if (foundOrder) {
-            foundOrder.products.push(product);
+            console.log("Add Product Action - Order ID:", orderId);
+            const order = state.items.find((order) => order.id === orderId);
+          
+            if (order) {
+              console.log("Order found:", order);
+              order.products.push(product);
             }
-        },
+          },
         paid : (state, action) => {
             const {order, paid} = action.payload;
             if (order){

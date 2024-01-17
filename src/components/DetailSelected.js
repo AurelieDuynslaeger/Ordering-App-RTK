@@ -1,37 +1,26 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-import products from '../services/products';
+import { useSelector } from 'react-redux';
 
-const DetailSelected = ({total, orderId }) => {
+const DetailSelected = ({ orderId }) => {
+// Utilisez le state du Redux pour récupérer la liste des commandes
+const orders = useSelector(state => state.data.items);
 
-    const { id } = useParams(); 
+// Recherche de la commande spécifique par son ID
+const currentOrder = orders.find(order => order.id === orderId);
 
-    const listItems = products.map(item => {
-        return (
-            <div className='order-list' key={item.id}>
-                <ul>
-                    <li>
-                        <div>
-                            <p>{item.name}</p>
-                            <p>(qté x {item.price})</p>
-                        </div>
-                        <div>
-                            <p>{item.price}€</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        )
-    })
-  return (
+// Utilisez la liste de produits à partir de l'objet de commande
+const products = currentOrder ? currentOrder.products : [];
+
+return (
     <div className="order-detail">
-        <h1>Détail de la commande N°{id}</h1>
-        {listItems}
-        <div>
-            <h5>Soit un total de {total}€</h5>
-        </div>
-    </div>
-  )
+    <h2>Detail de la commande N° { orderId }</h2>
+    <ul>
+      {products.map((product, index) => (
+        <li key={index}>{product.name} - {product.price}</li>
+      ))}
+    </ul>
+  </div>
+);
 }
-
+  
 export default DetailSelected

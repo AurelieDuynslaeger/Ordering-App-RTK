@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items : [
+    orders : [
         {
             id: "CMD-123",
             products: [
@@ -18,7 +18,7 @@ const dataSlice = createSlice({
     initialState,
     reducers : {
         add : (state, { payload }) => {
-            state.items.push({
+            state.orders.push({
                 id: payload.id,
                 products: payload.products || [],
                 bill: payload.bill || 0,
@@ -27,11 +27,9 @@ const dataSlice = createSlice({
         },
         addProduct: (state, { payload }) => {
             const { orderId, product } = payload;
-            console.log("Add Product Action - Order ID:", orderId);
-            const order = state.items.find((order) => order.id === orderId);
+            const order = state.orders.find((order) => order.id === orderId);
           
             if (order) {
-              console.log("Order found:", order);
               order.products.push(product);
             }
           },

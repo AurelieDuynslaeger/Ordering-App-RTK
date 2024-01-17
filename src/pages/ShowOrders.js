@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 
 const ShowOrders = () => {
 
-    //recup de tous les items du state inital
-    const items = useSelector(state => state.data.items);
+    //recup de tous les orders du state inital
+    const orders = useSelector(state => state.data.orders);
     const columns=
             [
                 {
@@ -36,8 +36,7 @@ const ShowOrders = () => {
                   ),
                 },
               ];
-              const data = items;
-              console.log(data)
+              const data = orders;
   return (
     <div className="container">
     <Header/>

@@ -3,18 +3,21 @@ import Header from '../components/Header';
 import DetailSelected from '../components/DetailSelected';
 import Product from '../components/Product';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { addProduct } from "../slices"
+import { useNavigate, useParams } from 'react-router-dom';
+import { add, addProduct } from "../slices"
 import products from '../services/products';
+import Button from '../components/Button';
 
 
 const NewOrder = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const navigate = useNavigate();
 
-  const orders = useSelector(state => state.data.items);
+  const orders = useSelector(state => state.data.orders);
   const currentOrder = orders.find(order => order.id === id);
   const selectedProducts = currentOrder ? currentOrder.products : [];
+  
 
 
   const addProductToCart = (product) => {
@@ -24,6 +27,11 @@ const NewOrder = () => {
       dispatch(addProduct({ orderId: id, product }));
     }
   };
+
+  const submitOrder = () => {
+    dispatch(add(currentOrder));
+    navigate("/");
+  }
 
   const listProducts = products.map(product => {
     return (
@@ -41,6 +49,7 @@ const NewOrder = () => {
           </div>
             <div className="order-detail">
                <DetailSelected orderId={id} selectedProducts={selectedProducts}/>
+               <Button name="Valider la commande" className="btn submit-order" action={submitOrder}/>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ import { paid } from '../slices'
 
 const OrdersPayment = () => {
     const dispatch = useDispatch();
-    const items = useSelector(state => state.data.items);
+    const orders = useSelector(state => state.data.orders);
     const [selectedOrder, setSelectedOrder] = useState(null);
 
     const clickPaid = () => {
@@ -25,11 +25,11 @@ const OrdersPayment = () => {
     <div className='select-order'>
         <h3>Selectionner la commande à encaisser :</h3>
         <select onChange={selectOrder}>
-        {items
-            .filter(item => !item.paid)
-            .map(item => (
-              <option key={item.id} value={item.id}>
-                {item.id} - {item.bill}€
+        {orders
+            .filter(order => !order.paid)
+            .map(order => (
+              <option key={order.id} value={order.id}>
+                {order.id} - {order.bill}€
               </option>
             ))}
         </select>

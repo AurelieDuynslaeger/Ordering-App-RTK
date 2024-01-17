@@ -2,6 +2,7 @@ import { Space, Table } from 'antd'
 import Header from '../components/Header.js'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { MdOutlineModeEdit, MdDeleteOutline } from "react-icons/md";
 
 const ShowOrders = () => {
 
@@ -30,8 +31,8 @@ const ShowOrders = () => {
                   key: 'action',
                   render: (text, record) => (
                     <Space size="middle">
-                      <p>Edit</p>
-                      <p>Delete</p>
+                      <MdOutlineModeEdit />
+                      <MdDeleteOutline />
                     </Space>
                   ),
                 },

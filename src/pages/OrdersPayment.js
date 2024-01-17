@@ -27,7 +27,7 @@ const OrdersPayment = () => {
         <select onChange={selectOrder}>
         {orders
             .filter(order => !order.paid)
-            .map(order => (
+            .map(order => ( 
               <option key={order.id} value={order.id}>
                 {order.id} - {order.bill}€
               </option>

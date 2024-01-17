@@ -1,4 +1,26 @@
 .payment {
     background-color: red;
-    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    border: 0.20rem solid;
+    border-radius: 3rem;
 }
+
+.payment:hover {
+    background-color:rgb(130, 220, 130);
+}
+
+.submit-order {
+    background-color: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    border: 0.20rem solid;
+    border-radius: 3rem;
+}
+
+.submit-order:hover {
+    background-color:rgb(130, 220, 130);
+}
+

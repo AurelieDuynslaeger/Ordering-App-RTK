@@ -19,8 +19,6 @@ code {
     monospace;
 }
 
-
-
 .wrapper {
   display: flex;
   padding:2rem;
@@ -30,23 +28,6 @@ code {
   width: 60vw;
   display: flex;
   flex-wrap: wrap;
-}
-
-
-.order-detail {
-  width:  auto;
-  background-color: white;
-  opacity: 0.6;
-  padding: 2rem;
-}
-
-.display-total {
-  background-color: red;
-  color: white;
-  span {
-    font-size: 2rem;
-    font-weight: bold;
-  }
 }
 
 .select-order {

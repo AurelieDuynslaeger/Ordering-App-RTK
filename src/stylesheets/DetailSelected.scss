@@ -1,0 +1,26 @@
+.order-detail {
+    width:  auto;
+    background-color: white;
+    opacity: 0.6;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    li {
+      list-style:disc;
+      display: flex;
+      justify-content:space-between;
+      text-align: center;
+    }
+  
+  }
+  
+  .display-total {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }

@@ -40,6 +40,15 @@ code {
   padding: 2rem;
 }
 
+.display-total {
+  background-color: red;
+  color: white;
+  span {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
 .select-order {
   display: flex;
   justify-content: center;

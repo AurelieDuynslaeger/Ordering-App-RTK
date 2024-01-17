@@ -2,14 +2,19 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 const DetailSelected = ({ orderId }) => {
-// Utilisez le state du Redux pour récupérer la liste des commandes
+
 const orders = useSelector(state => state.data.items);
-
-// Recherche de la commande spécifique par son ID
 const currentOrder = orders.find(order => order.id === orderId);
+const products = currentOrder ? [...currentOrder.products] : [];
+let total = 0;
 
-// Utilisez la liste de produits à partir de l'objet de commande
-const products = currentOrder ? currentOrder.products : [];
+  for (const product of products) {
+    total += product.price;
+  }
+  if (currentOrder) {
+    currentOrder.products = [...products]; // Création d'une copie modifiable
+    currentOrder.bill = total;
+  }
 
 return (
     <div className="order-detail">
@@ -19,6 +24,7 @@ return (
         <li key={index}>{product.name} - {product.price}</li>
       ))}
     </ul>
+    <div className='display-total'>Soit un total de : <span>{total.toFixed(2)} €</span></div>
   </div>
 );
 }

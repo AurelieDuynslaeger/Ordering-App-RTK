@@ -1,19 +1,18 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import ShowItems from '../components/ShowItems';
 import Header from '../components/Header';
+import DetailSelected from '../components/DetailSelected';
+import products from '../services/products';
 
 const NewOrder = () => {
-
-    const { id } = useParams(); 
 
   return (
     <div className="container">
         <Header/>
         <div className="wrapper">
             <ShowItems/>
-            <div className="cart">
-                <h1>Commande n° : {id}</h1>
+            <div className="order-detail">
+               <DetailSelected items={products} total={12}/>
             </div>
         </div>
     </div>

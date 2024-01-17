@@ -9,7 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./img/background-pizza.jpg");
+  // background-image: url("./img/background-pizza.jpg");
+  background-color: #D3BDB0;
   
 }
 
@@ -21,17 +22,28 @@ code {
 .container {
   max-width: 90vw;
   margin: auto;
+  height: 100vh;
 }
 
 .menu-cards {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding:2rem;
-  margin:2rem;
+  margin:auto;
+  height: 70vh;
 }
 
 .menu-tab-add {
   @include m.menuTab(rgb(78, 78, 212));
+}
+
+.menu-tab-show {
+  @include m.menuTab(rgb(203, 68, 68))
+}
+
+.menu-tab-pay {
+  @include m.menuTab(rgb(130, 220, 130))
 }
 
 .wrapper {
@@ -40,7 +52,7 @@ code {
 }
 
 .products-list {
-  width: 55vw;
+  width: 90vw;
   display: flex;
   flex-wrap: wrap;
 }
@@ -66,8 +78,25 @@ code {
   margin:1rem;
 }
 
-.cart {
-  width: 35VW;
-  background-color: red;
+.order-detail {
+  width:  auto;
+  background-color: white;
+  opacity: 0.6;
   padding: 2rem;
+}
+
+.select-order {
+  display: flex;
+  justify-content: center;
+  select {
+    width: 25%;
+    text-align: center;
+    margin: 2rem;
+    border: none;
+  }
+}
+
+.item-list {
+  background-color: white;
+  opacity: 0.6;
 }

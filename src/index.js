@@ -10,8 +10,9 @@ import { Provider } from 'react-redux';
 
 //création du store
 const store = configureStore({
-  reducer: dataReducer
-})
+  reducer: {
+    data : dataReducer
+}})
 
 //connexion du store
 const root = ReactDOM.createRoot(document.getElementById('root'));

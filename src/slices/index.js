@@ -1,7 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items : []
+    items : [
+        {
+            id: "CMD-123",
+            products: [
+              { name: "Margarita", quantity: 2 },
+            ],
+            bill: 15.80,
+            paid : false
+          },
+    ]
 }
 
 const dataSlice = createSlice({
@@ -16,8 +25,14 @@ const dataSlice = createSlice({
                 paid: false
             })
         },
+        paid : (state, action) => {
+            const {order, paid} = action.payload;
+            if (order){
+                order.paid = paid;
+            }
+        }
     }
 })
 
-export const { add } = dataSlice.actions;
+export const { add, paid } = dataSlice.actions;
 export default dataSlice.reducer;

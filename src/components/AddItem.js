@@ -2,24 +2,17 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { add } from '../slices';
 import { useNavigate } from 'react-router-dom';
+import items from '../services/products';
 
-const AddItem = ({icon, title, description}) => {
+const AddItem = () => {
+  const dispatch = useDispatch();
 
-    const [item, setItem] = useState({});
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const addTodo = () => {
-
-        const orderID = `CMD-${Date.now()}`;
-        // Faire appel à l'action add de notre slice et l'envoyer au reducer de notre slice
-        dispatch(add(item));
-
-        // Faire en sorte que le champ de saisie soit vidé lors de l'ajout de la tache
-        setItem({});
-        navigate(`/NewOrder/${orderID}`);
-
-    }
+        const newOrder = {
+         
+        }
+        // Faire appel à l'action add de la slice et l'envoyer au reducer de notre slice
+        dispatch(add(newOrder));
+    
   return (
     <div className="menu-tab-add" onClick={() => addTodo()}>
         <div className="tab-header">

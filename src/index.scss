@@ -19,32 +19,7 @@ code {
     monospace;
 }
 
-.container {
-  max-width: 90vw;
-  margin: auto;
-  height: 100vh;
-}
 
-.menu-cards {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:2rem;
-  margin:auto;
-  height: 70vh;
-}
-
-.menu-tab-add {
-  @include m.menuTab(rgb(78, 78, 212));
-}
-
-.menu-tab-show {
-  @include m.menuTab(rgb(203, 68, 68))
-}
-
-.menu-tab-pay {
-  @include m.menuTab(rgb(130, 220, 130))
-}
 
 .wrapper {
   display: flex;
@@ -56,27 +31,7 @@ code {
   display: flex;
   flex-wrap: wrap;
 }
-.product-card {
-  flex-basis: 50%;
-  padding:2rem;
-  img {
-    width: 100%;
-    border-radius: 10rem 0;
-  }
-  
-}
 
-.product-detail {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  background-color: white;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  border-radius: 5rem 0;
-  margin:1rem;
-}
 
 .order-detail {
   width:  auto;

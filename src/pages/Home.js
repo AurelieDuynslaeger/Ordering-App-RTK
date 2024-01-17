@@ -7,15 +7,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { add } from '../slices';
 import HomeCards from '../components/HomeCards.js';
+import "../stylesheets/Home.scss"
 
 const Home = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const [item, setItem] = useState();
 
-  //action pour la carte Commander
   const clickToOrder = () => {
       const orderID = `CMD-${Date.now()}`;
       dispatch(add(item));

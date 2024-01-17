@@ -1,13 +1,13 @@
 import React from 'react';
 import items from '../services/products';
 
-const ShowItems = () => {
+const ShowItems = ({action}) => {
   return (
 
     <div className='products-list'>
     
     {items.map((item) => (
-        <div key={item.id} className='product-card'>
+        <div key={item.id} className='product-card' onClick={action}>
             <div className="product-cover">
                 <img src={item.cover} alt={item.name} />
             </div>

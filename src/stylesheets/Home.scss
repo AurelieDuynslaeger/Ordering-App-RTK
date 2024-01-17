@@ -1,0 +1,29 @@
+@use "./mixins" as m;
+
+
+.container {
+    max-width: 90vw;
+    margin: auto;
+    height: 100vh;
+  }
+
+  .menu-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2rem;
+    margin:auto;
+    height: 70vh;
+  }
+  
+  .menu-tab-add {
+    @include m.menuTab(rgb(78, 78, 212));
+  }
+  
+  .menu-tab-show {
+    @include m.menuTab(rgb(203, 68, 68))
+  }
+  
+  .menu-tab-pay {
+    @include m.menuTab(rgb(130, 220, 130))
+  }

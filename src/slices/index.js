@@ -25,6 +25,20 @@ const dataSlice = createSlice({
                 paid: false
             })
         },
+        addProduct : (state, { payload }) => {
+            const { orderId, product } = payload;
+        
+            const foundOrder = state.items.find(order => {
+            console.log("IDs in state.items:", state.items.map(order => order.id));
+            return order.id === orderId;
+            });
+
+            console.log("Found order:", foundOrder);
+
+            if (foundOrder) {
+            foundOrder.products.push(product);
+            }
+        },
         paid : (state, action) => {
             const {order, paid} = action.payload;
             if (order){
@@ -34,5 +48,5 @@ const dataSlice = createSlice({
     }
 })
 
-export const { add, paid } = dataSlice.actions;
+export const { add, paid, addProduct } = dataSlice.actions;
 export default dataSlice.reducer;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from '../components/Header.js'
 import { BiSolidMessageAltAdd } from "react-icons/bi";
 import { PiCookingPot } from "react-icons/pi";
@@ -13,13 +13,19 @@ const Home = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [item, setItem] = useState();
+  
 
   const clickToOrder = () => {
-      const orderID = `CMD-${Date.now()}`;
-      dispatch(add(item));
-      navigate(`/NewOrder/${orderID}`)
-      setItem({});
+    const NewOrder = {
+      id: `CMD-${Date.now()}`,
+      products: [],
+      bill: 0,
+      paid: false
+    };
+  
+    dispatch(add(NewOrder));
+    navigate(`/NewOrder/${NewOrder.id}`);
+   
   }
 
   const clickToShow = () => {

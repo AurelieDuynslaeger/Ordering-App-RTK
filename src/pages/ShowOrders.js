@@ -4,6 +4,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { MdOutlineModeEdit, MdDeleteOutline } from "react-icons/md";
 import { deleteOrder } from '../slices/index.js';
+import "../stylesheets/ShowOrders.scss"
 
 const ShowOrders = () => {
 
@@ -34,8 +35,8 @@ const ShowOrders = () => {
                   key: 'action',
                   render: (text, record) => (
                     <Space size="middle">
-                      <MdOutlineModeEdit />
-                      <MdDeleteOutline onClick={() => removeOrder(record.id)}/>
+                      <MdOutlineModeEdit className='edit-svg'/>
+                      <MdDeleteOutline onClick={() => removeOrder(record.id)} className='delete-svg'/>
                     </Space>
                   ),
                 },

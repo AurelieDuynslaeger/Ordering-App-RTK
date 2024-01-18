@@ -39,7 +39,3 @@ const DetailSelected = ({ orderId, selectedProducts }) => {
 };
 
 export default DetailSelected;
-
-
-
-

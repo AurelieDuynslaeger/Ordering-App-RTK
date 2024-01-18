@@ -26,11 +26,12 @@ const dataSlice = createSlice({
             })
         },
         addProduct: (state, { payload }) => {
-            const { orderId, product } = payload;
+            const { orderId, products, bill } = payload;
             const order = state.orders.find((order) => order.id === orderId);
           
             if (order) {
-              order.products.push(product);
+              order.products = products;
+              order.bill = bill;
             }
           },
         paid : (state, action) => {

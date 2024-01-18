@@ -1,13 +1,16 @@
-import { Space, Table } from 'antd'
+import { Space, Table, message } from 'antd'
 import Header from '../components/Header.js'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { MdOutlineModeEdit, MdDeleteOutline } from "react-icons/md";
+import { deleteOrder } from '../slices/index.js';
 
 const ShowOrders = () => {
 
-    //recup de tous les orders du state inital
+    const dispatch = useDispatch();
     const orders = useSelector(state => state.data.orders);
+
+
     const columns=
             [
                 {
@@ -32,12 +35,16 @@ const ShowOrders = () => {
                   render: (text, record) => (
                     <Space size="middle">
                       <MdOutlineModeEdit />
-                      <MdDeleteOutline />
+                      <MdDeleteOutline onClick={() => removeOrder(record.id)}/>
                     </Space>
                   ),
                 },
               ];
               const data = orders;
+              const removeOrder = (orderId) => {
+                dispatch(deleteOrder(orderId));
+                message.success('La commande a été supprimée avec succès.');
+              }
   return (
     <div className="container">
     <Header/>

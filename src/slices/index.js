@@ -38,9 +38,13 @@ const dataSlice = createSlice({
             if (order){
                 order.paid = paid;
             }
-        }
+        },
+        deleteOrder: (state, action) => {
+            const orderIdToDelete = action.payload;
+            state.orders = state.orders.filter(order => order.id !== orderIdToDelete);
+          },
     }
 })
 
-export const { add, paid, addProduct } = dataSlice.actions;
+export const { add, paid, addProduct, deleteOrder } = dataSlice.actions;
 export default dataSlice.reducer;

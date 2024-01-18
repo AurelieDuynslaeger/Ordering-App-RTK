@@ -1,28 +1,33 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import "../stylesheets/Button.scss"
-import "../stylesheets/DetailSelected.scss"
+import React from 'react';
+import '../stylesheets/Button.scss';
+import '../stylesheets/DetailSelected.scss';
 
+const DetailSelected = ({ orderId, selectedProducts }) => {
+  // Calculer le montant total en additionnant les prix de tous les produits
+  const totalAmount = selectedProducts.reduce((acc, product) => acc + (product.price * product.quantity), 0);
 
-const DetailSelected = ({ orderId }) => {
-
-  const orders = useSelector(state => state.data.orders);
-  const currentOrder = orders.find(order => order.id === orderId);
-  const products = currentOrder ? [...currentOrder.products] : [];
-
-return (
+  return (
     <div className="order-detail">
-      <h2>Detail de la commande N° { orderId }</h2>
+      <h2>Detail de la commande N° {orderId}</h2>
       <ul>
-        {products.map((product, index) => (
-          <li key={index}><p>{product.name}</p> <p>{product.price}</p></li>
+        {selectedProducts.map((product) => (
+          <li key={product.id}>
+            <div>
+              <p>{product.name}</p>
+            </div>
+            <p>{product.quantity} x {product.price}</p>
+          </li>
         ))}
       </ul>
       <div className='display-total'>
-        <p>Soit un total de : <span>total €</span></p> 
+        {/* Utiliser le montant total calculé */}
+        <p>Soit un total de : <span>{totalAmount} €</span></p>
       </div>
-  </div>
-);
-}
-  
-export default DetailSelected
+    </div>
+  );
+};
+
+export default DetailSelected;
+
+
+

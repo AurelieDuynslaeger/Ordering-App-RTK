@@ -15,15 +15,7 @@ const DetailSelected = ({ orderId }) => {
   const orders = useSelector(state => state.data.orders);
   const currentOrder = orders.find(order => order.id === orderId);
   const products = currentOrder ? [...currentOrder.products] : [];
-// let total = 0;
 
-//   for (const product of products) {
-//     total += product.price;
-//   }
-//   if (currentOrder) {
-//     currentOrder.products = [...products]; // Création d'une copie modifiable
-//     currentOrder.bill = total;
-//   }
 
   const submitOrder = () => {
     dispatch(add(currentOrder));

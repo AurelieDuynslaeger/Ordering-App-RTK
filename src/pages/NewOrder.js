@@ -21,9 +21,7 @@ const NewOrder = () => {
 
 
   const addProductToCart = (product) => {
-    // console.log("Adding product to cart:", product);
     if (currentOrder) {
-      console.log("Current Order ID:", id);
       dispatch(addProduct({ orderId: id, product }));
     }
   };

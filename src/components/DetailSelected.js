@@ -15,6 +15,7 @@ const DetailSelected = ({ orderId, selectedProducts }) => {
 
   // Calculer le montant total en additionnant les prix de tous les produits
   const totalAmount = selectedProducts.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+  const roundedTotal = Math.round(totalAmount * 100) / 100;
 
   return (
     <div className="order-detail">
@@ -31,7 +32,7 @@ const DetailSelected = ({ orderId, selectedProducts }) => {
       </ul>
       <div className='display-total'>
         {/* Utiliser le montant total calculé */}
-        <p>Soit un total de : <span>{totalAmount} €</span></p>
+        <p>Soit un total de : <span>{roundedTotal} €</span></p>
       </div>
     </div>
   );

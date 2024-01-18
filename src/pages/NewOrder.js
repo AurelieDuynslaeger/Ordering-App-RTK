@@ -38,11 +38,12 @@ const NewOrder = () => {
     } else {
       const newProduct = { ...product, quantity: 1 };
       const totalAmount = (currentOrder.bill || 0) + (newProduct.price * newProduct.quantity);
+      const roundedTotal = Math.round(totalAmount * 100) / 100;
 
       dispatch(addProduct({
         orderId: id,
         products: [...selectedProducts, newProduct],
-        bill: totalAmount
+        bill: roundedTotal
       }));
     }
   };

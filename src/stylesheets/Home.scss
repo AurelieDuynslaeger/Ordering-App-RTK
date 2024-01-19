@@ -17,13 +17,13 @@
   }
   
   .menu-tab-add {
-    @include m.menuTab(rgb(78, 78, 212));
+    @include m.menuTab(#5C81BA);
   }
   
   .menu-tab-show {
-    @include m.menuTab(rgb(203, 68, 68))
+    @include m.menuTab(#AD5D4E)
   }
   
   .menu-tab-pay {
-    @include m.menuTab(rgb(130, 220, 130))
+    @include m.menuTab(#ACBEA3)
   }

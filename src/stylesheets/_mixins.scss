@@ -1,6 +1,10 @@
 @mixin menuTab ($background){
-    color : white;
-    background-color: $background;
+    color : black;
+    background-image: $background;
+    font-weight: bold;
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
     border: 0.5rem solid white;
     text-align: center;
     height:40vh;
@@ -16,5 +20,6 @@
       h3 {
         font-size: 4rem;
         text-transform: uppercase;
+        -webkit-text-stroke: 2px white;
       }
 }

@@ -1,7 +1,7 @@
 .order-detail {
     width:  auto;
-    background-color: white;
-    opacity: 0.6;
+    background-color: #d59f6f;
+    opacity: 0.8;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -15,8 +15,7 @@
   }
   
   .display-total {
-    background-color: red;
-    color: white;
+    background-color: #b93d39;
     text-align: center;
     padding: 1rem;
     span {

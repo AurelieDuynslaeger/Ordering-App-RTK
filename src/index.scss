@@ -1,6 +1,7 @@
 @use "./stylesheets/reset";
 @use "./stylesheets/variables" as v;
 @use "./stylesheets/mixins" as m;
+@use "./stylesheets/fonts" as f;
 
 body {
   margin: 0;
@@ -10,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // background-image: url("./img/background-pizza.jpg");
-  background-color: #D3BDB0;
+  background-color: #AD5D4E;
   
 }
 

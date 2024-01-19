@@ -4,19 +4,20 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #242D41;
-    opacity: 0.8;
-    padding : 2rem;
+    // background-color: #060606;
+    opacity: 0.6;
     margin-top: 2rem;
-    svg {
-        font-size: 7rem;
-        margin:2rem;
-    }
-    h1 {
-        font-size: 6rem;
-    }
+    border-bottom: 0.8rem solid #929646;
+  padding-bottom: 10px; 
+    // svg {
+    //     font-size: 7rem;
+    //     margin:2rem;
+    // }
+    // h1 {
+    //     font-size: 6rem;
+    // }
     img {
-        width:30vh;
+        width:40vh;
     }
     .arrow-back {
         width:10vh;

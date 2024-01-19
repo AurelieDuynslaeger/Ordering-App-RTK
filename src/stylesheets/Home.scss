@@ -17,13 +17,15 @@
   }
   
   .menu-tab-add {
-    @include m.menuTab(#5C81BA);
+    @include m.menuTab(url("../img/order-pizza.png"));
   }
   
   .menu-tab-show {
-    @include m.menuTab(#AD5D4E)
+    // @include m.menuTab(#AD5D4E)
+    @include m.menuTab(url("../img/pending-order-bg.png"));
   }
   
   .menu-tab-pay {
-    @include m.menuTab(#ACBEA3)
+    // @include m.menuTab(#ACBEA3)
+    @include m.menuTab(url("../img/order-topay-bg.png"));
   }

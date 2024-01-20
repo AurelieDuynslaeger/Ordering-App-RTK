@@ -1,13 +1,13 @@
+@use "./variables" as v;
+
 .ant-space-item svg {
     font-size : 3rem;
-    
   }
   
 .delete-svg {
-    background-color: rgb(203, 68, 68);
+    background-color: v.$color-details;
 }
 
 .edit-svg {
-    background-color: rgb(78, 78, 212);
+    background-color: #71A7D6;
 }
-

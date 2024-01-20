@@ -1,4 +1,4 @@
-
+// produits qui constituent notre bdd, sinon test api.
 const products = [
     {
         id: 0,

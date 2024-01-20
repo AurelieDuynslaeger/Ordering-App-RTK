@@ -1,11 +1,14 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import DetailSelected from '../components/DetailSelected';
 import Button from '../components/Button';
 import { paid } from '../slices';
+import "../stylesheets/OrdersPayment.scss"
 
 const OrdersPayment = () => {
+
+
   const dispatch = useDispatch();
   const orders = useSelector(state => state.data.orders);
   const [selectedOrder, setSelectedOrder] = useState(null);
@@ -37,15 +40,15 @@ const OrdersPayment = () => {
 
       <div className="items-list">
       {selectedOrder && (
-          <>
             <DetailSelected orderId={selectedOrder.id} selectedProducts={selectedOrder.products} />
-            <Button
+        )}
+      </div>
+      <div className="payment">
+      <Button
               name="Encaisser la commande"
-              className="btn payment"
+              className="btn-payment"
               action={clickPaid}
             />
-          </>
-        )}
       </div>
     </div>
   );

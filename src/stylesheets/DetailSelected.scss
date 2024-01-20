@@ -1,12 +1,13 @@
+@use "./variables" as v;
+
 .order-detail {
     width:  auto;
-    background-color: #d59f6f;
+    background-color: v.$color-details;
     opacity: 0.8;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     li {
-      list-style:disc;
       display: flex;
       justify-content:space-between;
       text-align: center;
@@ -15,7 +16,7 @@
   }
   
   .display-total {
-    background-color: #b93d39;
+    background-color: v.$bg-bill;
     text-align: center;
     padding: 1rem;
     span {

@@ -10,11 +10,13 @@ import HomeCards from '../components/HomeCards.js';
 import "../stylesheets/Home.scss"
 
 const Home = () => {
-
+  //redirection 
   const navigate = useNavigate();
+
+  //dispatch de l'action add pour l'ajouter d'un nvl objet au state.data.orders
   const dispatch = useDispatch();
   
-
+  //click sur la premiere carte commander : création d'un nvl obket order qui sera push dans orders [] grâce à l'action add du reducer
   const clickToOrder = () => {
     const NewOrder = {
       id: `CMD-${Date.now()}`,
@@ -28,10 +30,12 @@ const Home = () => {
    
   }
 
+  //redirection au click sur la 2eme carte sur la route des commandes en cours
   const clickToShow = () => {
     navigate(`/PendingOrders`)
   }
 
+   //redirection au click sur la 3eme carte sur la route des commandes à payer
   const clickToPayment = () => {
     navigate(`/OrdersToPay`)
   }

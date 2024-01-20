@@ -11,7 +11,7 @@ const ShowOrders = () => {
     const dispatch = useDispatch();
     const orders = useSelector(state => state.data.orders);
 
-
+  //table importée de ant design, on définit le nom des colonnes ainsi que leur date index (ceux présent dans les objets du state)
     const columns=
             [
                 {
@@ -41,6 +41,7 @@ const ShowOrders = () => {
                   ),
                 },
               ];
+              //ici data pour ant design reprends tous les orders qu'on a récupéré avec useSelector sur le state global
               const data = orders;
               const removeOrder = (orderId) => {
                 dispatch(deleteOrder(orderId));

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../stylesheets/Button.scss';
 import '../stylesheets/DetailSelected.scss';
 
 const DetailSelected = ({ orderId, selectedProducts }) => {
@@ -26,7 +25,7 @@ const DetailSelected = ({ orderId, selectedProducts }) => {
             <div>
               <p>{product.name}</p>
             </div>
-            <p>{product.quantity} x {product.price}</p>
+            <p>{product.quantity} x {product.price} €</p>
           </li>
         ))}
       </ul>

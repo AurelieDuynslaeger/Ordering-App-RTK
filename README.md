@@ -1,6 +1,10 @@
 # Projet React-Redux avec Redux Toolkit
 
-![React Logo](react-logo.png) ![Redux Logo](redux-logo.png) ![Redux Toolkit Logo](redux-toolkit-logo.png)
+- ![React Logo](react-logo.png) ![Redux Logo](redux-logo.png) ![Redux Toolkit Logo](redux-toolkit-logo.png)
+- ![Start Coding](https://img.shields.io/badge/Start%20Coding-J--80-blue)
+- ![Redux Beginners](https://img.shields.io/badge/Redux%20Beginners-First%20Project-green)
+- ![Strapi Discovery](https://img.shields.io/badge/Strapi%20Discovery-CMS%20Exploration-yellow)
+
 
 ## Description
 
@@ -26,9 +30,6 @@ Ce projet est le fruit d'une formation continue entamée en septembre 2023. Fort
 
 ## Badges
 
-- ![Start Coding](https://img.shields.io/badge/Start%20Coding-J--80-blue)
-- ![Redux Beginners](https://img.shields.io/badge/Redux%20Beginners-First%20Project-green)
-- ![Strapi Discovery](https://img.shields.io/badge/Strapi%20Discovery-CMS%20Exploration-yellow)
 
 ## Configuration
 

@@ -1,6 +1,6 @@
 # Projet React-Redux avec Redux Toolkit
 
-![React Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png) ![Redux Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Redux_Logo.png/320px-Redux_Logo.png)
+![React Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/150px-React-icon.svg.png) ![Redux Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Redux_Logo.png/320px-Redux_Logo.png)
 
 ## Description
 

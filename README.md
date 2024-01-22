@@ -8,10 +8,10 @@ Travail pratique réalisé en autonomie après avoir découvert React et Redux T
 Nous avions une maquette de démarrage, mais le style pouvait être revu et personnalisé 😊🤘.
 
 ## Starter Pack 
-<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:60px ; height:60px "  >
-<img src="./StarterPackImg/nouvelle-commande.png.png" alt="new order" style=" width:60px ; height:60px "  >
-<img src="./StarterPackImg/commande-en-cours.png.png" alt="pending orders" style=" width:60px ; height:60px "  >
-<img src="./StarterPackImg/paiement.png.png" alt="payment" style=" width:60px ; height:60px "  >
+<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:120px ; height:120px "  >
+<img src="./StarterPackImg/nouvelle-commande.png" alt="new order" style=" width:120px ; height:120px "  >
+<img src="./StarterPackImg/commande-en-cours.png" alt="pending orders" style=" width:120px ; height:120px "  >
+<img src="./StarterPackImg/paiement.png" alt="payment" style=" width:120px ; height:120px "  >
 
 
 ## Contexte

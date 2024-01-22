@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Projet React-Redux avec Redux Toolkit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React Logo](react-logo.png) ![Redux Logo](redux-logo.png) ![Redux Toolkit Logo](redux-toolkit-logo.png)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Travail pratique réalisé en autonomie après avoir découvert React et Redux ToolKit. Le but : créer une application de gestion de commandes, conçue ici pour les gérants d'une pizzeria. Cette application vous permet de prendre des commandes, de suivre les commandes en cours (réglées ou en attente) et de gérer le processus de paiement.
+Nous avions une maquette de démarrage, mais le style pouvait être revu et personnalisé 😊🤘.
 
-### `npm start`
+## Contexte
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ce projet est le fruit d'une formation continue entamée en septembre 2023. Fort de mes acquis depuis lors, j'ai décidé de mettre en pratique mes compétences en React et Redux pour créer une application fonctionnelle et pertinente. Accompli en toute autonomie, ce projet a été développé en 3,5 jours. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Utilisées
 
-### `npm test`
+- **React**: Bibliothèque JavaScript pour la construction de l'interface utilisateur.
+- **Redux**: Gestion d'état pour une application React plus robuste.
+- **Redux Toolkit**: Simplifiez la gestion de l'état avec des fonctionnalités comme createSlice et configureStore.
+- **Strapi**: Utilisable comme CMS pour fournir des données via une API.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Démarrage Rapide
 
-### `npm run build`
+1. Clonez le repository.
+2. Installez les dépendances avec `npm install`.
+3. Lancez l'application avec `npm start`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Badges
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ![Start Coding](https://img.shields.io/badge/Start%20Coding-J--80-blue)
+- ![Redux Beginners](https://img.shields.io/badge/Redux%20Beginners-First%20Project-green)
+- ![Strapi Discovery](https://img.shields.io/badge/Strapi%20Discovery-CMS%20Exploration-yellow)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuration
 
-### `npm run eject`
+- Configurez l'API ou la base de données locale dans le fichier de configuration.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contribution
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Les contributions sont les bienvenues! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Happy Coding!**

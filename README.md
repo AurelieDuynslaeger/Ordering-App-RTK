@@ -7,6 +7,13 @@
 Travail pratique réalisé en autonomie après avoir découvert React et Redux ToolKit. Le but : créer une application de gestion de commandes, conçue ici pour les gérants d'une pizzeria. Cette application vous permet de prendre des commandes, de suivre les commandes en cours (réglées ou en attente) et de gérer le processus de paiement.
 Nous avions une maquette de démarrage, mais le style pouvait être revu et personnalisé 😊🤘.
 
+## Starter Pack 
+<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:60px ; height:60px "  >
+<img src="./StarterPackImg/nouvelle-commande.png.png" alt="new order" style=" width:60px ; height:60px "  >
+<img src="./StarterPackImg/commande-en-cours.png.png" alt="pending orders" style=" width:60px ; height:60px "  >
+<img src="./StarterPackImg/paiement.png.png" alt="payment" style=" width:60px ; height:60px "  >
+
+
 ## Contexte
 
 Ce projet est le fruit d'une formation continue entamée en septembre 2023. Fort de mes acquis depuis lors, j'ai décidé de mettre en pratique mes compétences en React et Redux pour créer une application fonctionnelle et pertinente. Accompli en toute autonomie, ce projet a été développé en 3,5 jours. 

@@ -5,10 +5,10 @@ Nous avions une maquette de démarrage, mais le style pouvait être revu et pers
 
 
 ## Starter Pack 
-<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:240px"  >
-<img src="./StarterPackImg/nouvelle-commande.png" alt="new order" style=" width:240px"  >
-<img src="./StarterPackImg/commande-en-cours.png" alt="pending orders" style=" width:240px  "  >
-<img src="./StarterPackImg/paiement.png" alt="payment" style=" width:240px"  >
+<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:100%"  >
+<img src="./StarterPackImg/nouvelle-commande.png" alt="new order" style=" width:100%"  >
+<img src="./StarterPackImg/commande-en-cours.png" alt="pending orders" style=" width:100%  "  >
+<img src="./StarterPackImg/paiement.png" alt="payment" style=" width:100%"  >
 
 
 ## Contexte

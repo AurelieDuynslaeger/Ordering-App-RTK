@@ -1,17 +1,16 @@
-# Projet React-Redux avec Redux Toolkit
-
-![React Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/150px-React-icon.svg.png) ![Redux Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Redux_Logo.png/320px-Redux_Logo.png)
-
 ## Description
 
 Travail pratique réalisé en autonomie après avoir découvert React et Redux ToolKit. Le but : créer une application de gestion de commandes, conçue ici pour les gérants d'une pizzeria. Cette application vous permet de prendre des commandes, de suivre les commandes en cours (réglées ou en attente) et de gérer le processus de paiement.
 Nous avions une maquette de démarrage, mais le style pouvait être revu et personnalisé 😊🤘.
 
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/) [![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux.js.org/) [![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
+[![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/) [![Ant Design](https://img.shields.io/badge/Ant_Design-0170FE?style=for-the-badge&logo=ant-design&logoColor=white)](https://ant.design/)
+
 ## Starter Pack 
-<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:120px ; height:120px "  >
-<img src="./StarterPackImg/nouvelle-commande.png" alt="new order" style=" width:120px ; height:120px "  >
-<img src="./StarterPackImg/commande-en-cours.png" alt="pending orders" style=" width:120px ; height:120px "  >
-<img src="./StarterPackImg/paiement.png" alt="payment" style=" width:120px ; height:120px "  >
+<img src="./StarterPackImg/accueil.png" alt="home page" style=" width:240px"  >
+<img src="./StarterPackImg/nouvelle-commande.png" alt="new order" style=" width:240px"  >
+<img src="./StarterPackImg/commande-en-cours.png" alt="pending orders" style=" width:240px  "  >
+<img src="./StarterPackImg/paiement.png" alt="payment" style=" width:240px"  >
 
 
 ## Contexte
@@ -30,8 +29,6 @@ Ce projet est le fruit d'une formation continue entamée en septembre 2023. Fort
 1. Clonez le repository.
 2. Installez les dépendances avec `npm install`.
 3. Lancez l'application avec `npm start`.
-
-## Badges
 
 
 ## Configuration

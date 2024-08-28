@@ -17,12 +17,12 @@ const Header = () => {
 
   return (
     <header>
-       
-       {/* {!isHomePage && <IoArrowBackOutline onClick={() => backHome()} />} */}
-       {!isHomePage && <img src={Arrow} alt="" srcset="" className="arrow-back" onClick={() => backHome()}/> }
-        {/* <ImTicket />
+
+      {/* {!isHomePage && <IoArrowBackOutline onClick={() => backHome()} />} */}
+      {!isHomePage && <img src={Arrow} alt="" className="arrow-back" onClick={() => backHome()} />}
+      {/* <ImTicket />
         <h1>ORDERING APP</h1> */}
-        <img src={Logo} alt="Logo Pizza 3000" srcset="" />
+      <img src={Logo} alt="Logo Pizza 3000" />
     </header>
   )
 }

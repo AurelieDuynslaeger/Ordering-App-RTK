@@ -16,6 +16,11 @@
     height: 70vh;
   }
   
+  .menu-tab-add,
+  .menu-tab-pay,
+  .menu-tab-show{
+    cursor: pointer;
+  }
   .menu-tab-add {
     @include m.menuTab(url("../img/order-pizza.png"));
   }

@@ -14,7 +14,9 @@ const OrdersPayment = () => {
   const [selectedOrder, setSelectedOrder] = useState(null);
 
   const clickPaid = () => {
-    dispatch(paid({ order: selectedOrder, paid: true }));
+    if (selectedOrder) {
+      dispatch(paid({ order: selectedOrder, paid: true }));
+    }
   };
 
   const selectOrder = (event) => {
@@ -28,6 +30,7 @@ const OrdersPayment = () => {
       <div className='select-order'>
         <h3>Selectionner la commande à encaisser :</h3>
         <select onChange={selectOrder}>
+          <option value="">-- Sélectionnez une commande --</option>
           {orders
             .filter(order => !order.paid)
             .map(order => (
@@ -39,16 +42,16 @@ const OrdersPayment = () => {
       </div>
 
       <div className="items-list">
-      {selectedOrder && (
-            <DetailSelected orderId={selectedOrder.id} selectedProducts={selectedOrder.products} />
+        {selectedOrder && (
+          <DetailSelected orderId={selectedOrder.id} selectedProducts={selectedOrder.products} />
         )}
       </div>
       <div className="payment">
-      <Button
-              name="Encaisser la commande"
-              className="btn-payment"
-              action={clickPaid}
-            />
+        <Button
+          name="Encaisser la commande"
+          className="btn-payment"
+          action={clickPaid}
+        />
       </div>
     </div>
   );

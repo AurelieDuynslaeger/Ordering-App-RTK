@@ -3,24 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 
 //création du slice avec une commande essai dans le tableau des orders dans le state global
 const initialState = {
-    orders : [
-        {
-            id: "CMD-123",
-            products: [
-              { name: "Margarita", quantity: 2 },
-            ],
-            bill: 15.80,
-            paid : false
-          },
+    orders: [
+
     ]
 }
 
 const dataSlice = createSlice({
-    name : "data",
+    name: "data",
     initialState,
-    reducers : {
+    reducers: {
         //action add qui créer le nvl order en l'initalisant (sur le composant Home)
-        add : (state, { payload }) => {
+        add: (state, { payload }) => {
             state.orders.push({
                 id: payload.id,
                 products: payload.products || [],
@@ -36,14 +29,31 @@ const dataSlice = createSlice({
             const { orderId, products, bill } = payload;
             const order = state.orders.find((order) => order.id === orderId);
             if (order) {
-              order.products = products;
-              order.bill = bill;
+                order.products = products;
+                order.bill = bill;
             }
-          },
-        paid : (state, action) => {
-            const {order, paid} = action.payload;
-            if (order){
-                order.paid = paid;
+        },
+        paid: (state, action) => {
+            const { order, paid } = action.payload;
+            const orderToUpdate = state.orders.find(o => o.id === order.id);
+            if (orderToUpdate) {
+                orderToUpdate.paid = paid;
+            }
+        },
+        updateProductQuantity: (state, { payload }) => {
+            const { orderId, products, bill } = payload;
+            const order = state.orders.find(order => order.id === orderId);
+            if (order) {
+                order.products = products;
+                order.bill = bill;
+            }
+        },
+        removeProduct: (state, { payload }) => {
+            const { orderId, products, bill } = payload;
+            const order = state.orders.find(order => order.id === orderId);
+            if (order) {
+                order.products = products;
+                order.bill = bill;
             }
         },
         //objet order à supprimer retrouvé avec l'id
@@ -51,9 +61,9 @@ const dataSlice = createSlice({
         deleteOrder: (state, action) => {
             const orderIdToDelete = action.payload;
             state.orders = state.orders.filter(order => order.id !== orderIdToDelete);
-          },
+        },
     }
 })
 
-export const { add, paid, addProduct, deleteOrder } = dataSlice.actions;
+export const { add, paid, addProduct, deleteOrder, updateProductQuantity, removeProduct } = dataSlice.actions;
 export default dataSlice.reducer;

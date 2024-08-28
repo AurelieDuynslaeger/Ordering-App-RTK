@@ -4,7 +4,7 @@ import DetailSelected from '../components/DetailSelected';
 import Product from '../components/Product';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addProduct, updateProductQuantity, removeProduct } from "../slices"; // Assure-toi que les bonnes actions sont importées
+import { addProduct, removeProduct, deleteProduct } from "../slices"; // Assure-toi que les bonnes actions sont importées
 import products from '../services/products';
 
 const NewOrder = () => {
@@ -47,39 +47,42 @@ const NewOrder = () => {
     }
   };
 
-  // Fonction pour mettre à jour la quantité d'un produit
-  const updateProductQuantity = (productName, quantityChange) => {
-    const updatedProducts = selectedProducts.map(p => {
-      if (p.name === productName) {
-        const newQuantity = p.quantity + quantityChange;
-        return { ...p, quantity: newQuantity > 0 ? newQuantity : 0 };
-      }
-      return p;
-    });
 
-    const totalAmount = updatedProducts.reduce((acc, p) => acc + (p.price * p.quantity), 0);
-    const roundedTotal = Math.round(totalAmount * 100) / 100;
-
-    dispatch(updateProductQuantity({
-      orderId: id,
-      products: updatedProducts,
-      bill: roundedTotal
-    }));
-  };
-
-  // Fonction pour supprimer un produit
+  // Fonction pour minus un produit
   const removeProductFromCart = (productName) => {
-    const updatedProducts = selectedProducts.filter(p => p.name !== productName);
+    const product = selectedProducts.find(p => p.name === productName);
+    if (product && product.quantity > 1) {
+      const updatedProducts = selectedProducts.map(p => {
+        if (p.name === productName) {
+          return { ...p, quantity: p.quantity - 1 };
+        }
+        return p;
+      });
 
-    const totalAmount = updatedProducts.reduce((acc, p) => acc + (p.price * p.quantity), 0);
-    const roundedTotal = Math.round(totalAmount * 100) / 100;
+      const totalAmount = updatedProducts.reduce((acc, p) => acc + (p.price * p.quantity), 0);
+      const roundedTotal = Math.round(totalAmount * 100) / 100;
 
-    dispatch(removeProduct({
+      dispatch(removeProduct({
+        orderId: id,
+        products: updatedProducts,
+        bill: roundedTotal
+      }));
+    } else {
+      dispatch(deleteProduct({
+        orderId: id,
+        productName
+      }));
+    }
+  };
+
+  // Fonction pour delete ligne de produits
+  const deleteProductFromCart = (productName) => {
+    dispatch(deleteProduct({
       orderId: id,
-      products: updatedProducts,
-      bill: roundedTotal
+      productName
     }));
   };
+
 
   const listProducts = products.map(product => (
     <Product
@@ -101,8 +104,9 @@ const NewOrder = () => {
         <DetailSelected
           orderId={id}
           selectedProducts={selectedProducts}
-          onUpdateProductQuantity={updateProductQuantity}
-          onRemoveProduct={removeProductFromCart}
+          onUpdateProductQuantity={removeProductFromCart}
+          onAddProductQuantity={addProductToCart}
+          onRemoveProduct={deleteProductFromCart}
         />
       </div>
     </div>

@@ -1,9 +1,20 @@
 @use "./variables" as v;
 
 .ant-space-item svg {
-    font-size : 3rem;
+    font-size : 2.5rem;
   }
-  
+
+.order-status {
+font-weight: bold;
+}
+
+.paid {
+color: green; // Couleur pour le statut "Réglé"
+}
+
+.unpaid {
+color: red; // Couleur pour le statut "En attente de paiement"
+}
 .delete-svg {
     background-color: v.$color-details;
 }
@@ -15,4 +26,6 @@
 .delete-svg, 
 .edit-svg{ 
     cursor: pointer;
+    border-radius: 5px;
 }
+

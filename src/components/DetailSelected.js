@@ -3,7 +3,7 @@ import '../stylesheets/DetailSelected.scss';
 import { TbPizzaOff } from "react-icons/tb";
 import { CiSquarePlus, CiSquareMinus } from "react-icons/ci";
 
-const DetailSelected = ({ orderId, selectedProducts, onUpdateProductQuantity, onRemoveProduct }) => {
+const DetailSelected = ({ orderId, selectedProducts, onUpdateProductQuantity, onAddProductQuantity, onRemoveProduct, isPayment }) => {
   if (!selectedProducts || selectedProducts.length === 0) {
     return (
       <div className="order-detail">
@@ -23,15 +23,23 @@ const DetailSelected = ({ orderId, selectedProducts, onUpdateProductQuantity, on
         {selectedProducts.map(product => (
           <li key={product.name}>
             <div className='pizza-line'>
-              <TbPizzaOff onClick={() => onRemoveProduct(product.name)} className='delete-pizza' />
+              {!isPayment && (
+                <>
+                  <TbPizzaOff onClick={() => onRemoveProduct(product.name)} className='delete-pizza' />
+                </>
+              )}
               <p>{product.name}</p>
             </div>
             <div className='pizza-quantity'>
               <p>{product.price} €</p>
               <div className='quantity-items'>
-                <CiSquareMinus onClick={() => onUpdateProductQuantity(product.name, -1)} className='quantity_icon' />
+                {!isPayment && (
+                  <>
+                    <CiSquareMinus onClick={() => onUpdateProductQuantity(product.name, -1)} className='quantity_icon' />
+                    <CiSquarePlus onClick={() => onAddProductQuantity(product, 1)} className='quantity_icon' />
+                  </>
+                )}
                 <span>{product.quantity}</span>
-                <CiSquarePlus onClick={() => onUpdateProductQuantity(product.name, 1)} className='quantity_icon' />
               </div>
             </div>
           </li>
@@ -45,3 +53,4 @@ const DetailSelected = ({ orderId, selectedProducts, onUpdateProductQuantity, on
 };
 
 export default DetailSelected;
+

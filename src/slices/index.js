@@ -26,6 +26,7 @@ const dataSlice = createSlice({
         //le calcul de bill se fait dans le meme temps en avec les quantités de chaque produits
         //composant NewOrder
         addProduct: (state, { payload }) => {
+            console.log('addProduct payload:', payload);
             const { orderId, products, bill } = payload;
             const order = state.orders.find((order) => order.id === orderId);
             if (order) {
@@ -40,20 +41,21 @@ const dataSlice = createSlice({
                 orderToUpdate.paid = paid;
             }
         },
-        updateProductQuantity: (state, { payload }) => {
+        removeProduct: (state, { payload }) => {
             const { orderId, products, bill } = payload;
-            const order = state.orders.find(order => order.id === orderId);
+            const order = state.orders.find((order) => order.id === orderId);
             if (order) {
                 order.products = products;
                 order.bill = bill;
             }
         },
-        removeProduct: (state, { payload }) => {
-            const { orderId, products, bill } = payload;
-            const order = state.orders.find(order => order.id === orderId);
+        deleteProduct: (state, { payload }) => {
+            const { orderId, productName } = payload;
+            const order = state.orders.find((order) => order.id === orderId);
             if (order) {
-                order.products = products;
-                order.bill = bill;
+                order.products = order.products.filter(p => p.name !== productName);
+                // Recalculer le total de la facture
+                order.bill = order.products.reduce((acc, p) => acc + (p.price * p.quantity), 0);
             }
         },
         //objet order à supprimer retrouvé avec l'id
@@ -65,5 +67,5 @@ const dataSlice = createSlice({
     }
 })
 
-export const { add, paid, addProduct, deleteOrder, updateProductQuantity, removeProduct } = dataSlice.actions;
+export const { add, paid, addProduct, deleteOrder, deleteProduct, removeProduct } = dataSlice.actions;
 export default dataSlice.reducer;

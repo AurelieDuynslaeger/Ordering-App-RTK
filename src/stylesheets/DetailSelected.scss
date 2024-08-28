@@ -32,11 +32,11 @@
     .pizza-quantity{
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-basis: 55%;
       .quantity-items{
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         gap:1.5rem;
         .quantity_icon{
           cursor: pointer;

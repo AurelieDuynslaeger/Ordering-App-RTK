@@ -25,20 +25,43 @@ const ShowOrders = () => {
         title: 'Total',
         dataIndex: 'bill',
         key: 'bill',
+        render: (text) => `${text} €`,
       },
       {
         title: 'Statut Commande',
         dataIndex: 'paid',
         key: 'paid',
-        render: (paid) => (paid ? 'Réglé' : 'En attente de paiment'),
+        render: (paid) => (
+          <span className={`order-status ${paid ? 'paid' : 'unpaid'}`}>
+            {paid ? 'Réglé' : 'En attente de paiement'}
+          </span>
+        ),
       },
       {
         title: 'Action',
         key: 'action',
         render: (text, record) => (
           <Space size="middle">
-            <MdOutlineModeEdit className='edit-svg' onClick={() => navigate(`/NewOrder/${record.id}`)} />
-            <MdDeleteOutline onClick={() => removeOrder(record.id)} className='delete-svg' />
+            {/* Afficher "Éditer" pour les commandes en attente de paiement */}
+            {!record.paid && (
+              <>
+                <MdOutlineModeEdit
+                  className='edit-svg'
+                  onClick={() => navigate(`/NewOrder/${record.id}`)}
+                />
+                <MdDeleteOutline
+                  onClick={() => removeOrder(record.id)}
+                  className='delete-svg'
+                />
+              </>
+            )}
+            {/* Afficher uniquement "Supprimer" pour les commandes réglées */}
+            {record.paid && (
+              <MdDeleteOutline
+                onClick={() => removeOrder(record.id)}
+                className='delete-svg'
+              />
+            )}
           </Space>
         ),
       },
@@ -53,6 +76,7 @@ const ShowOrders = () => {
     dispatch(deleteOrder(orderId));
     message.success('La commande a été supprimée avec succès.');
   };
+
   return (
     <div className="container">
       <Header />

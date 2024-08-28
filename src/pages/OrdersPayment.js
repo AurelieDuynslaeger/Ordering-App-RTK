@@ -5,11 +5,11 @@ import DetailSelected from '../components/DetailSelected';
 import Button from '../components/Button';
 import { paid } from '../slices';
 import "../stylesheets/OrdersPayment.scss"
+import { useNavigate } from 'react-router-dom';
 
 const OrdersPayment = () => {
-
-
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const orders = useSelector(state => state.data.orders);
   const [selectedOrder, setSelectedOrder] = useState(null);
 
@@ -17,6 +17,7 @@ const OrdersPayment = () => {
     if (selectedOrder) {
       dispatch(paid({ order: selectedOrder, paid: true }));
     }
+    navigate('/PendingOrders');
   };
 
   const selectOrder = (event) => {
@@ -43,7 +44,7 @@ const OrdersPayment = () => {
 
       <div className="items-list">
         {selectedOrder && (
-          <DetailSelected orderId={selectedOrder.id} selectedProducts={selectedOrder.products} />
+          <DetailSelected orderId={selectedOrder.id} selectedProducts={selectedOrder.products} isPayment={true} />
         )}
       </div>
       <div className="payment">

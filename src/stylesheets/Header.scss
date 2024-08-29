@@ -4,23 +4,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: #060606;
     opacity: 0.6;
     margin-top: 2rem;
     border-bottom: 0.8rem solid v.$color-sucess;
     padding-bottom: 10px; 
-    // svg {
-    //     font-size: 7rem;
-    //     margin:2rem;
-    // }
-    // h1 {
-    //     font-size: 6rem;
-    // }
     img {
-        width:40vh;
+        width:20vw;
     }
     .arrow-back {
         width:10vh;
         cursor: pointer;
     }
 }
+

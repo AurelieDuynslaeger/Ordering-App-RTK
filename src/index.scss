@@ -21,14 +21,19 @@ code {
 }
 
 .wrapper {
-  display: flex;
-  padding:2rem;
+  padding: 1rem 0.5rem;
+   @media screen and (min-width: 900px) {
+    display: flex;
+   }
 }
 
 .products-list {
-  width: 60vw;
+  width:90vw;
   display: flex;
   flex-wrap: wrap;
+  @media screen and (min-width:900px) {
+    width: 60vw;
+  }
 }
 
 .select-order {
@@ -36,8 +41,12 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h3{
+    font-size: 2rem;
+    text-align: center;
+  }
   select {
-    width: 25%;
+    width: 100%;
     text-align: center;
     margin: 2rem;
     border: none;
@@ -45,6 +54,9 @@ code {
     border-radius: 5px;
     border: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    @media screen and (min-width:900px) {
+      width: 25%;
+    }
   }
 }
 

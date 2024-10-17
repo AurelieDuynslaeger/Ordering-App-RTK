@@ -10,11 +10,16 @@
 
 .menu-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding:2rem;
   margin:auto;
-  height: 70vh;
+  height: fit-content;
+  gap: 1rem;
+  @media screen and (min-width: 992px) {
+    height: 70vh;
+  }
 }
   
 .menu-tab-add,

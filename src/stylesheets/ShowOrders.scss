@@ -29,3 +29,14 @@ color: red; // Couleur pour le statut "En attente de paiement"
     border-radius: 5px;
 }
 
+:where(.css-dev-only-do-not-override-zl9ks2).ant-table-wrapper .ant-table-cell, :where(.css-dev-only-do-not-override-zl9ks2).ant-table-wrapper .ant-table-thead>tr>th {
+    padding: 8px 8px !important;
+}
+
+.ant-table-cell{
+    font-size: 12px;
+    @media screen and (min-width: 900px) {
+        font-size: 18px;
+    }
+}
+

@@ -6,6 +6,8 @@
     cursor: pointer;
     img {
       width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   }
   .product-details {
@@ -19,4 +21,7 @@
     margin:1rem;
     font-family: 'Shadows Into Light', cursive;
     color:v.$color-product;
+    p{
+      margin: 0;
+    }
   }
